@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+struct User {
+char username[20];
+char files[10][20];
+int fileCount;
+};
+
+int main() {
+struct User users[2] = { {"user1", {"fileA.txt", "fileB.doc"}, 2},
+{"user2", {"fileC.pdf"}, 1} };
+
+prinƞ("Two Level Directory:\n");
+for (int i = 0; i < 2; i++) {
+prinƞ("User: %s\n", users[i].username);
+for (int j = 0; j < users[i].fileCount; j++)
+prinƞ(" %s\n", users[i].files[j]);
+}
+return 0;
+}
+Output:
+Two Level Directory:
+User: user1
+fileA.txt
+fileB.doc
+User: user2
+fileC.pdf
